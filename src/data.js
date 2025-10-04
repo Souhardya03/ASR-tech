@@ -22,6 +22,7 @@ export const products = [
     rating: 5,
     reviews: 89,
     discount: 40,
+    categoryId: 5, // Electronics
   },
   {
     id: 2,
@@ -32,26 +33,29 @@ export const products = [
     rating: 4,
     reviews: 75,
     discount: 35,
+    categoryId: 1, // Electronics
   },
   {
     id: 3,
     image: Product3,
-    name: "IPS LCD Gaming Monitor",
+    name: "Shirt",
     price: 370,
     oldPrice: 400,
     rating: 5,
     reviews: 99,
     discount: 30,
+    categoryId: 3, // Electronics
   },
   {
     id: 4,
     image: Product4,
-    name: "S-Series Comfort Chair ",
+    name: "S-Series Comfort Mouse",
     price: 375,
     oldPrice: 400,
     rating: 4.8,
     reviews: 99,
     discount: 25,
+    categoryId: 1, // Home Decor
   },
   {
     id: 5,
@@ -62,6 +66,7 @@ export const products = [
     rating: 4.5,
     reviews: 150,
     discount: 20,
+    categoryId: 2, // Footwear
   },
   {
     id: 6,
@@ -72,8 +77,10 @@ export const products = [
     rating: 4.2,
     reviews: 200,
     discount: 15,
+    categoryId: 1, // Electronics
   },
 ];
+
 
 export const categories = [
   { id: 1, image: Category1, name: "Electronics" },

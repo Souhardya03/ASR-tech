@@ -20,6 +20,17 @@ const Wishlist = () => {
 		loadWishlist();
 	};
 
+	const moveAllToCart = () => {
+		const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+		let cart = JSON.parse(localStorage.getItem("cart")) || [];
+		cart = Array.from(new Set([...cart, ...wishlist]));
+		localStorage.setItem("cart", JSON.stringify(cart));
+		localStorage.setItem("wishlist", JSON.stringify([]));
+		setProducts([]);
+		window.dispatchEvent(new Event("cartUpdated"));
+		window.dispatchEvent(new Event("wishlistUpdated"));
+	}
+
 	return (
 		<div className="px-14  my-32">
 			<div className="pt-14 flex justify-between items-center  pb-4">
@@ -29,7 +40,7 @@ const Wishlist = () => {
 						Wishlist ({product.length})
 					</div>
 				</div>
-				<div className="border border-black p-3 px-8 rounded-md font-semibold">
+				<div onClick={moveAllToCart} className="border cursor-pointer border-black p-3 px-8 rounded-md font-semibold">
 					Move to Bag
 				</div>
 			</div>

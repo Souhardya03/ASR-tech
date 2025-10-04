@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Heart, Truck, RotateCcw } from "lucide-react";
 import { products } from "../../data";
 import { ProductCard } from "../../components/ProductCard";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import {
 	FaHeart,
 	FaRegHeart,
@@ -28,20 +28,21 @@ export default function ProductDetailsPage() {
 		const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 		setInWishlist(wishlist.includes(parseInt(id)));
 		const cart = JSON.parse(localStorage.getItem("cart")) || [];
-		setInCart(cart.includes(parseInt(id)));
+		setInCart(cart.some(item => item.id === parseInt(id)));
 	}, [id]);
-	
+
 	const toggleCart = () => {
-		let cart = JSON.parse(localStorage.getItem("cart")) || [];
-		const id1 = parseInt(id);
-		if (cart.includes(id1)) {
-			cart = cart.filter((item) => item !== id1);
+		let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+		const existingItem = cartItems.find((item) => item.id === parseInt(id));
+		if (existingItem) {
+			cartItems = cartItems.filter((item) => item.id !== parseInt(id));
 			setInCart(false);
 		} else {
-			cart.push(id1);
+			cartItems.push({ id:parseInt(id), quantity: quantity });
 			setInCart(true);
 		}
-		localStorage.setItem("cart", JSON.stringify(cart));
+		localStorage.setItem("cart", JSON.stringify(cartItems));
+		window.dispatchEvent(new Event("cartUpdated"));
 	};
 
 	return (
@@ -191,9 +192,13 @@ export default function ProductDetailsPage() {
 								</button>
 							</div>
 							{inCart ? (
-								<button className="flex-1 text-lg bg-green-500 hover:bg-green-600 text-white font-medium rounded h-12">
-									Go to Cart
-								</button>
+								<NavLink
+									className="flex-1"
+									to={"/cart"}>
+									<button className="flex-1 w-full text-lg bg-green-500 hover:bg-green-600 text-white font-medium rounded h-12">
+										Go to Cart
+									</button>
+								</NavLink>
 							) : (
 								<button
 									onClick={toggleCart}

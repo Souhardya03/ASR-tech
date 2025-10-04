@@ -7,7 +7,9 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import ProductDetailsPage from "./pages/ProductDetails/ProductDetails";
 import CartPage from "./pages/Cart/Cart";
 import MyAccountPage from "./pages/Profile/Profile";
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Products from "./pages/Products/Products";
+import CheckoutPage from "./pages/Checkout/Checkout";
 
 function App() {
 	return (
@@ -33,6 +35,14 @@ function App() {
 				<Route
 					path="/profile"
 					element={<MyAccountPage />}
+				/>
+				<Route
+					path="/products"
+					element={<Products />}
+				/>
+				<Route
+					path="/checkout"
+					element={<CheckoutPage />}
 				/>
 			</Routes>
 

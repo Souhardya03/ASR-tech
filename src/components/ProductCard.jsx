@@ -46,17 +46,18 @@ export const ProductCard = ({
 		window.dispatchEvent(new Event("wishlistUpdated"));
 	};
 	const toggleCart = () => {
-		let cart = JSON.parse(localStorage.getItem("cart")) || [];
-		if (cart.includes(id)) {
-			cart = cart.filter((item) => item !== id);
+		let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+		const existingItem = cartItems.find(item => item.id === id);
+		if (existingItem) {
+			cartItems = cartItems.filter(item => item.id !== id);
 			setInCart(false);
 		} else {
-			cart.push(id);
+			cartItems.push({ id, quantity: 1 });
 			setInCart(true);
 		}
-		localStorage.setItem("cart", JSON.stringify(cart));
+		localStorage.setItem("cart", JSON.stringify(cartItems));
 		if (onCartChange) onCartChange();
-		window.dispatchEvent(new Event("cartUpdated"));		
+		window.dispatchEvent(new Event("cartUpdated"));
 	};
 
 	return (

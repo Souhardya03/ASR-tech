@@ -11,17 +11,14 @@ const NavBar = () => {
 	const [cartCount, setCartCount] = useState(
 		JSON.parse(localStorage.getItem("cart"))?.length || 0
 	);
-	console.log(cartCount);
 	
-
-	// Listen for localStorage changes (even across tabs)
 	useEffect(() => {
 		const updateCounts = () => {
 			setWishlistCount(JSON.parse(localStorage.getItem("wishlist"))?.length || 0);
-			setCartCount(JSON.parse(localStorage.getItem("cart"))?.length || 0);
+			const cartQuantity = JSON.parse(localStorage.getItem("cart"))?.reduce((total, item) => total + item.quantity, 0) || 0;
+			setCartCount(cartQuantity || 0);
 		};
 
-		// Custom event for same-tab updates
 		window.addEventListener("storage", updateCounts);
 		window.addEventListener("wishlistUpdated", updateCounts);
 		window.addEventListener("cartUpdated", updateCounts);
