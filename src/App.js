@@ -1,15 +1,42 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home/Home";
 import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
+import Wishlist from "./pages/Wishlist/Wishlist";
+import ProductDetailsPage from "./pages/ProductDetails/ProductDetails";
+import CartPage from "./pages/Cart/Cart";
+import MyAccountPage from "./pages/Profile/Profile";
+import { Routes,Route } from "react-router-dom";
 
 function App() {
 	return (
 		<>
 			<NavBar />
-      <Home/>
-      <Footer/>
+			<Routes>
+				<Route
+					path="/"
+					element={<Home />}
+				/>
+				<Route
+					path="/wishlist"
+					element={<Wishlist />}
+				/>
+				<Route
+					path="/product/:id"
+					element={<ProductDetailsPage />}
+				/>
+				<Route
+					path="/cart"
+					element={<CartPage />}
+				/>
+				<Route
+					path="/profile"
+					element={<MyAccountPage />}
+				/>
+			</Routes>
+
+			<Footer />
 		</>
 	);
 }

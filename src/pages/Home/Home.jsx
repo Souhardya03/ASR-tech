@@ -1,94 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 import SmartWatch from "../../assets/Group1000005958.svg";
-import Product1 from "../../assets/Product1.svg";
-import Product2 from "../../assets/Product2.svg";
-import Product3 from "../../assets/Product3.svg";
-import Product4 from "../../assets/Product4.svg";
-import Product5 from "../../assets/Product5.svg";
-import Product6 from "../../assets/Product6.svg";
-import FillHeart from "../../assets/FillHeart.svg";
-import FillEye from "../../assets/FillEye.png";
-import Category1 from "../../assets/Category1.svg";
-import Category2 from "../../assets/Category2.svg";
-import Category3 from "../../assets/Category3.svg";
-import Category4 from "../../assets/Category4.svg";
-import Category5 from "../../assets/Category5.svg";
-import Category6 from "../../assets/Category6.svg";
+
 import Banner2 from "../../assets/Banner2.svg";
+import { ProductCard } from "../../components/ProductCard";
+import { products,categories } from "../../data";
 
-const products = [
-  {
-    id: 1,
-    image: Product1,
-    name: "HAVIT HV-G92 Gamepad",
-    price: 120,
-    oldPrice: 160,
-    rating: 5,
-    reviews: 89,
-    discount: 40,
-  },
-  {
-    id: 2,
-    image: Product2,
-    name: "AK-900 Wired Keyboard",
-    price: 960,
-    oldPrice: 1160,
-    rating: 4,
-    reviews: 75,
-    discount: 35,
-  },
-  {
-    id: 3,
-    image: Product3,
-    name: "IPS LCD Gaming Monitor",
-    price: 370,
-    oldPrice: 400,
-    rating: 5,
-    reviews: 99,
-    discount: 30,
-  },
-  {
-    id: 4,
-    image: Product4,
-    name: "S-Series Comfort Chair ",
-    price: 375,
-    oldPrice: 400,
-    rating: 4.8,
-    reviews: 99,
-    discount: 25,
-  },
-  {
-    id: 5,
-    image: Product5,
-    name: "Shoes",
-    price: 420,
-    oldPrice: 500,
-    rating: 4.5,
-    reviews: 150,
-    discount: 20,
-  },
-  {
-    id: 6,
-    image: Product6,
-    name: "GP11 Shooter USB Gamepad",
-    price: 80,
-    oldPrice: 100,
-    rating: 4.2,
-    reviews: 200,
-    discount: 15,
-  },
-];
-
-const categories = [
-  { id: 1, image: Category1, name: "Electronics" },
-  { id: 2, image: Category2, name: "Footwear" },
-  { id: 3, image: Category3, name: "Clothing" },
-  { id: 4, image: Category4, name: "Camera" },
-  { id: 5, image: Category5, name: "Headphones" },
-  { id: 6, image: Category6, name: "Home Decor" },
-];
 
 // ---------------- Countdown Component ----------------
 const initialTime = {
@@ -171,10 +88,10 @@ const Home = () => {
       >
         {/* Left Content */}
         <div className="absolute z-10 left-0">
-          <div className="max-w-4xl z-1 p-28">
-            <h2 className=" md:text-[68px] font-bold text-gray-900 leading-snug">
+          <div className="max-w-5xl z-1 p-28">
+            <h2 className=" md:text-7xl leading-3 font-bold text-gray-900 ">
               Discover the{" "}
-              <span className="text-[#ffac32] text-5xl">Best Deals</span>
+              <span className="text-[#ffac32] text-7xl">Best Deals</span>
               <br />
               on Trendy Products
             </h2>
@@ -205,7 +122,7 @@ const Home = () => {
       </div>
       {/* End of Banner */}
 
-      {/* Flash Sale */}
+      
       <div className="px-8">
         <div className="flex items-center h-6 gap-2 mt-8 ">
           <div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
@@ -234,7 +151,7 @@ const Home = () => {
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
-        <div className="mt-8 mb-16 flex items-center justify-center text-center font-medium cursor-pointer">
+        <div className="mt-14 mb-16 flex items-center justify-center text-center font-medium cursor-pointer">
           <div className="text-white p-4 w-[20%] rounded-md text-lg bg-[#F54A00]">
             View All Products
           </div>
@@ -338,62 +255,10 @@ const Home = () => {
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
-          <div className="mt-8 mb-16 flex items-center justify-center text-center font-medium cursor-pointer">
+          <div className="mt-14 mb-16 flex items-center justify-center text-center font-medium cursor-pointer">
             <div className="text-white p-4 w-[20%] rounded-md text-lg bg-[#F54A00]">
               View All Products
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ---------------- Product Card ----------------
-const ProductCard = ({
-  image,
-  name,
-  price,
-  oldPrice,
-  rating,
-  reviews,
-  discount,
-}) => {
-  return (
-    <div className=" py-8">
-      <div className=" rounded-lg w-[ h-[350px]">
-        <div className="relative group overflow-hidden bg-[#f5f5f5] flex items-center justify-center w-[270px h-[300px]">
-          <div className="absolute right-2 top-2 ">
-            <div className="flex flex-col gap-2">
-              <img
-                src={FillHeart}
-                alt="Favorite"
-                className="inline-block  w-[35px] h-[35px] cursor-pointer"
-              />
-              <img
-                src={FillEye}
-                alt="Eye"
-                className="inline-block  w-[35px] h-[35px] cursor-pointer"
-              />
-            </div>
-          </div>
-          <div className="absolute bg-[#F54A00] text-white p-2 text-sm rounded top-3 left-4">
-            -{discount}%
-          </div>
-          <div className="absolute overflow-hidden  group-hover:translate-y-0 translate-y-14 cursor-pointer bottom-1 bg-black w-full text-white text-center p-3 duration-150">
-            Add to cart
-          </div>
-          <img src={image} className="" alt="" />
-        </div>
-        <div>
-          <h2 className="font-semibold text-xl cursor-pointer">{name}</h2>
-          <p className="text-[#DB4444] text-lg font-medium">
-            ${price}{" "}
-            <span className=" line-through ml-4 text-[#9f9e9e]">${oldPrice}</span>
-          </p>
-          <div className="flex items-center mt-1">
-            <Rating rating={rating} />
-            <span className="ml-2 text-sm text-gray-500">({reviews})</span>
           </div>
         </div>
       </div>
@@ -411,21 +276,6 @@ const CategoryCard = ({ image, name }) => {
       <h2 className="text-center group-hover:text-white pb-2">{name}</h2>
     </div>
   );
-};
-
-// ---------------- Rating Stars ----------------
-const Rating = ({ rating }) => {
-  const stars = [];
-  for (let i = 1; i <= 5; i++) {
-    if (rating >= i) {
-      stars.push(<FaStar key={i} className="text-yellow-500" />);
-    } else if (rating >= i - 0.5) {
-      stars.push(<FaStarHalfAlt key={i} className="text-yellow-500" />);
-    } else {
-      stars.push(<FaRegStar key={i} className="text-yellow-500" />);
-    }
-  }
-  return <div className="flex">{stars}</div>;
 };
 
 export default Home;
