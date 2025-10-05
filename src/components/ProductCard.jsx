@@ -61,13 +61,13 @@ export const ProductCard = ({
 	};
 
 	return (
-		<div className=" py-8">
-			<div className=" rounded-lg w-[ h-[350px]">
-				<div className="relative group overflow-hidden bg-[#f5f5f5] flex items-center justify-center w-[270px h-[300px]">
-					<div className="absolute right-2 top-2 ">
+		<div className=" lg:py-8 pt-8">
+			<div className=" rounded-lg md:h-[350px]">
+				<div className="relative group overflow-hidden bg-[#f5f5f5] flex items-center justify-center h-[220px] md:h-[200px]  lg:h-[300px]">
+					<div className="absolute right-1 md:right-2 top-2 ">
 						<div className="flex flex-col gap-2">
 							<div
-								className="bg-[#ffffff] h-10 w-10 rounded-full flex items-center justify-center cursor-pointer"
+								className="bg-[#ffffff] md:h-10 md:w-10 h-8 w-8 rounded-full flex items-center justify-center cursor-pointer"
 								onClick={toggleWishlist}>
 								{inWishlist ? (
 									<FaHeart
@@ -80,13 +80,13 @@ export const ProductCard = ({
 							</div>
 							<NavLink
 								to={`/product/${id}`}
-								className="bg-[#ffffff] h-10 w-10 rounded-full flex items-center justify-center cursor-pointer"
+								className="bg-[#ffffff] md:h-10 md:w-10 h-8 w-8 rounded-full flex items-center justify-center cursor-pointer"
 								onClick={() => window.scrollTo(0, 0)}>
 								<FaRegEye size={18} />
 							</NavLink>
 						</div>
 					</div>
-					<div className="absolute bg-[#F54A00] text-white p-2 text-sm rounded top-3 left-4">
+					<div className="absolute bg-[#F54A00] text-white p-2 md:text-sm text-xs rounded top-3 left-4">
 						-{discount}%
 					</div>
 					{inCart ? (
@@ -108,18 +108,18 @@ export const ProductCard = ({
 
 					<img
 						src={image}
-						className=""
-						alt="w-full h-full object-cover"
+						className="md:w-full lg:h-64 w-32 h-32 "
+						alt=""
 					/>
 				</div>
 				<div className="mt-4">
 					<NavLink
 						to={`/product/${id}`}
-						className="font-semibold text-xl cursor-pointer"
+						className="font-semibold md:text-xl cursor-pointer"
 						onClick={() => window.scrollTo(0, 0)}>
 						{name}
 					</NavLink>
-					<p className="text-[#DB4444] text-lg font-medium">
+					<p className="text-[#DB4444] text-sm md:text-lg font-medium">
 						${price}{" "}
 						<span className=" line-through ml-4 text-[#9f9e9e]">
 							${oldPrice}

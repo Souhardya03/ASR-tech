@@ -4,7 +4,7 @@ import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12 px-6 md:px-16">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 border-b border-gray-700 pb-10">
 
         {/* QuickShop */}
         <div>

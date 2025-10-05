@@ -46,10 +46,10 @@ export default function ProductDetailsPage() {
 	};
 
 	return (
-		<div className="px-14 my-32 bg-white">
+		<div className="lg:px-14 lg:my-32 my-20 bg-white">
 			{/* Breadcrumb */}
-			<div className=" mx-auto px-4 py-4">
-				<div className="flex items-center gap-2 text-lg text-gray-600">
+			<div className=" mx-auto px-4 lg:py-4">
+				<div className="flex items-center gap-2 lg:text-lg text-xs text-gray-600">
 					<span>Home</span>
 					<span>/</span>
 					<span>Headphones</span>
@@ -60,11 +60,11 @@ export default function ProductDetailsPage() {
 
 			{/* Main Content */}
 			<div className=" mx-auto px-4 py-8">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
 					{/* Left Side - Images */}
-					<div className="flex gap-4">
+					<div className="flex md:flex-row flex-col-reverse gap-4">
 						{/* Thumbnails */}
-						<div className="flex flex-col gap-4">
+						<div className="flex md:flex-col gap-4">
 							{thumbnails.map((index) => (
 								<button
 									key={index}
@@ -97,7 +97,7 @@ export default function ProductDetailsPage() {
 
 					{/* Right Side - Product Details */}
 					<div className="flex flex-col">
-						<h1 className="text-4xl font-semibold mb-3">{product.name}</h1>
+						<h1 className="md:text-4xl text-2xl font-semibold mb-3">{product.name}</h1>
 
 						{/* Rating and Stock */}
 						<div className="flex items-center gap-3 mb-4">
@@ -170,7 +170,7 @@ export default function ProductDetailsPage() {
 						</div>
 
 						{/* Quantity and Buy Button */}
-						<div className="flex gap-4 mb-6">
+						<div className="flex md:gap-4 gap-2 mb-6">
 							<div className="flex border border-gray-300 rounded">
 								<button
 									onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -195,14 +195,14 @@ export default function ProductDetailsPage() {
 								<NavLink
 									className="flex-1"
 									to={"/cart"}>
-									<button className="flex-1 w-full text-lg bg-green-500 hover:bg-green-600 text-white font-medium rounded h-12">
+									<button className="flex-1 w-full text-sm md:text-lg bg-green-500 hover:bg-green-600 text-white font-medium rounded h-12">
 										Go to Cart
 									</button>
 								</NavLink>
 							) : (
 								<button
 									onClick={toggleCart}
-									className="flex-1 text-lg bg-orange-500 hover:bg-orange-600 text-white font-medium rounded h-12">
+									className="flex-1 md:text-lg text-sm bg-orange-500 hover:bg-orange-600 text-white font-medium rounded h-12">
 									Buy Now
 								</button>
 							)}
@@ -244,7 +244,7 @@ export default function ProductDetailsPage() {
 				</div>
 			</div>
 
-			<div className="pt-14 flex justify-between items-center  pb-4">
+			<div className="md:pt-14 px-4 flex justify-between items-center  md:pb-4">
 				<div className="flex items-center h-6 gap-2 ">
 					<div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
 					<div className="text-[#F54A00] text-[25px] font-semibold">
@@ -252,7 +252,7 @@ export default function ProductDetailsPage() {
 					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-4 gap-8 mt-8">
+			<div className="grid px-4 md:grid-cols-4 grid-cols-2 lg:gap-8 gap-2 md:mt-8">
 				{products.slice(0, 4).map((product) => (
 					<ProductCard
 						key={product.id}

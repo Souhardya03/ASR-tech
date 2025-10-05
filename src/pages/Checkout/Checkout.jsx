@@ -63,10 +63,10 @@ export default function CheckoutPage() {
 	const total = subtotal + (shipping === "Free" ? 0 : shipping);
 
 	return (
-		<div className="min-h-screen my-32 px-16 bg-white">
-			<div className=" mx-auto px-4 py-8">
+		<div className="min-h-screen md:mt-32 mx-4 lg:px-16 my-20 bg-white">
+			<div className=" mx-auto px-4 md:py-8">
 				{/* Breadcrumb */}
-				<div className="flex items-center gap-2 text-lg mb-12 text-gray-500">
+				<div className="flex items-center gap-1 md:gap-2 text-xs md:text-lg mb-4 md:mb-12 text-gray-500">
 					<span>Account</span>
 					<span>/</span>
 					<span>My Account</span>
@@ -79,15 +79,17 @@ export default function CheckoutPage() {
 				</div>
 
 				{/* Main Content */}
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
 					{/* Left Side - Billing Details */}
 					<div>
-						<h1 className="text-4xl font-medium mb-12">Billing Details</h1>
+						<h1 className="md:text-4xl text-2xl font-medium mb-4 md:mb-12">
+							Billing Details
+						</h1>
 
-						<div className="space-y-8">
+						<div className="md:space-y-8 space-y-3">
 							{/* First Name */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									First Name<span className="text-red-500">*</span>
 								</label>
 								<input
@@ -102,7 +104,9 @@ export default function CheckoutPage() {
 
 							{/* Company Name */}
 							<div>
-								<label className="block mb-2">Company Name</label>
+								<label className="block text-sm md:text-lg mb-2">
+									Company Name
+								</label>
 								<input
 									type="text"
 									name="companyName"
@@ -114,7 +118,7 @@ export default function CheckoutPage() {
 
 							{/* Street Address */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									Street Address<span className="text-red-500">*</span>
 								</label>
 								<input
@@ -129,7 +133,7 @@ export default function CheckoutPage() {
 
 							{/* Apartment */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									Apartment, floor, etc. (optional)
 								</label>
 								<input
@@ -143,7 +147,7 @@ export default function CheckoutPage() {
 
 							{/* Town/City */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									Town/City<span className="text-red-500">*</span>
 								</label>
 								<input
@@ -158,7 +162,7 @@ export default function CheckoutPage() {
 
 							{/* Phone Number */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									Phone Number<span className="text-red-500">*</span>
 								</label>
 								<input
@@ -173,7 +177,7 @@ export default function CheckoutPage() {
 
 							{/* Email Address */}
 							<div>
-								<label className="block mb-2">
+								<label className="block text-sm md:text-lg mb-2">
 									Email Address<span className="text-red-500">*</span>
 								</label>
 								<input
@@ -187,18 +191,18 @@ export default function CheckoutPage() {
 							</div>
 
 							{/* Save Info Checkbox */}
-							<div className="flex items-center gap-3">
+							<div className="flex items-center md:gap-3 gap-1">
 								<input
 									type="checkbox"
 									id="saveInfo"
 									name="saveInfo"
 									checked={formData.saveInfo}
 									onChange={handleInputChange}
-									className="w-5 h-5 accent-red-500"
+									className="md:w-5 w-4 h-4 md:h-5 accent-red-500"
 								/>
 								<label
 									htmlFor="saveInfo"
-									className="text-sm">
+									className="md:text-sm text-xs">
 									Save this information for faster check-out next time
 								</label>
 							</div>
@@ -206,14 +210,17 @@ export default function CheckoutPage() {
 					</div>
 
 					{/* Right Side - Order Summary */}
-					<div className="pt-20">
+					<div className="md:pt-20">
 						{/* Product */}
 						{cartItems.map((product, index) => (
 							<div className="flex items-center justify-between mb-8">
 								<div className="flex items-center gap-4">
 									<div className="relative">
 										<div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center">
-											<img src={product.image} alt="" />
+											<img
+												src={product.image}
+												alt=""
+											/>
 										</div>
 										<div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">
 											{product.quantity}
@@ -221,7 +228,9 @@ export default function CheckoutPage() {
 									</div>
 									<span className="text-xl">{product.name}</span>
 								</div>
-								<span className="font-normal">${(product.price*product.quantity).toFixed(2)}</span>
+								<span className="font-normal">
+									${(product.price * product.quantity).toFixed(2)}
+								</span>
 							</div>
 						))}
 
@@ -295,7 +304,7 @@ export default function CheckoutPage() {
 						</div>
 
 						{/* Coupon Code */}
-						<div className="flex gap-4 mb-6">
+						<div className="flex flex-col md:flex-row gap-4 mb-6">
 							<input
 								type="text"
 								placeholder="Coupon Code"

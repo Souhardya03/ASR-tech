@@ -80,10 +80,10 @@ export default function CartPage() {
 	const total = subtotal + shipping;
 
 	return (
-		<div className=" px-14 my-32 bg-white">
-			<div className="mx-auto px-4 py-8">
+		<div className="lg:px-14 px-4 pt-8 my-8 lg:my-32">
+			<div className="mx-auto lg:px-4 py-4 lg:py-8">
 				{/* Breadcrumb */}
-				<div className="flex items-center gap-2 text-lg mb-12">
+				<div className="flex md:text-lg text-sm items-center gap-2 lg:mb-12 mb-6">
 					<span className="text-gray-500">Home</span>
 					<span className="text-gray-500">/</span>
 					<span className="text-black font-medium">Cart</span>
@@ -94,14 +94,16 @@ export default function CartPage() {
 						<div className="text-center  text-3xl font-medium ">
 							Your cart is currently empty.
 						</div>
-						<p className="text-gray-500">Browse your favourite items from our shop. </p>
+						<p className="text-gray-500">
+							Browse your favourite items from our shop.{" "}
+						</p>
 					</div>
 				) : (
 					<>
 						{/* Cart Table */}
 						<div className="mb-8">
 							{/* Table Header */}
-							<div className="grid grid-cols-4 text-xl gap-8 py-6 px-8 shadow-sm mb-8">
+							<div className="md:grid hidden grid-cols-4 text-xl gap-8 py-6 px-8 shadow-sm mb-8">
 								<div className="font-normal">Product</div>
 								<div className="font-normal">Price</div>
 								<div className="font-normal">Quantity</div>
@@ -112,7 +114,7 @@ export default function CartPage() {
 							{cartItems.map((item) => (
 								<div
 									key={item.id}
-									className="grid grid-cols-4 gap-8 py-6 px-8 shadow-sm mb-4 items-center">
+									className="grid md:grid-cols-4 md:border-0 border border-gray-400 grid-cols-1 gap-3 md:gap-8 md:py-6 md:px-8 p-4 md:shadow-md shadow-lg mb-4 items-center">
 									<div className="flex items-center gap-4">
 										<div className="relative">
 											<div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center">
@@ -128,31 +130,58 @@ export default function CartPage() {
 												<X className="w-4 h-4" />
 											</button>
 										</div>
-										<span className="font-normal text-lg">{item.name}</span>
+										<div>
+											<span className="font-medium text-lg">{item.name}</span>
+											<p className="text-sm text-gray-600">${item.price}</p>
+										</div>
 									</div>
-									<div className="font-normal text-lg">${item.price}</div>
-									<div className="flex items-center border border-gray-300 rounded w-fit">
-										<button
-											onClick={() => updateQuantity(item.id, item.quantity - 1)}
-											className="w-10 h-10 flex items-center justify-center hover:bg-gray-50">
-											−
-										</button>
-										<input
-											type="number"
-											value={item.quantity}
-											onChange={(e) =>
-												updateQuantity(item.id, parseInt(e.target.value) || 1)
-											}
-											className="w-16 h-10 text-center border-x border-gray-300 outline-none"
-											min="1"
-										/>
-										<button
-											onClick={() => updateQuantity(item.id, item.quantity + 1)}
-											className="w-10 h-10 flex items-center justify-center hover:bg-gray-50">
-											+
-										</button>
+									<div className="font-normal text-lg md:block hidden">
+										${item.price}
 									</div>
-									<div className="font-normal text-lg text-right">
+									<div className="flex flex-row gap-4 md:gap-8 items-start md:items-center">
+										<div className="space-y-1">
+											<p className="text-sm  text-gray-500 font-medium w-full">
+												Quantity:
+											</p>
+											<div className="flex items-center border border-gray-300 rounded w-fit">
+												<button
+													onClick={() =>
+														updateQuantity(item.id, item.quantity - 1)
+													}
+													className="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center hover:bg-gray-50">
+													−
+												</button>
+												<input
+													type="number"
+													value={item.quantity}
+													onChange={(e) =>
+														updateQuantity(
+															item.id,
+															parseInt(e.target.value) || 1
+														)
+													}
+													className="md:w-16 md:h-10 w-12 h-8 text-center border-x border-gray-300 outline-none"
+													min="1"
+												/>
+												<button
+													onClick={() =>
+														updateQuantity(item.id, item.quantity + 1)
+													}
+													className="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center hover:bg-gray-50">
+													+
+												</button>
+											</div>
+										</div>
+										<div className="font-normal md:hidden text-lg justify-end flex flex-col  items-center mt-2 w-full text-right">
+											<p className="text-xs text-right text-gray-500 font-medium w-full">
+												Subtotal
+											</p>
+											<p className="text-[16px] w-full">
+												${item.price * item.quantity}
+											</p>
+										</div>
+									</div>
+									<div className="font-normal text-lg hidden md:block text-right">
 										${item.price * item.quantity}
 									</div>
 								</div>
@@ -161,23 +190,23 @@ export default function CartPage() {
 
 						{/* Return to Shop Button */}
 						<div className="mb-16">
-							<button className="px-12 text-lg py-4 border-2 border-gray-300 rounded hover:bg-gray-50 font-medium">
+							<button className="lg:px-12 lg:text-lg text-sm p-3 px-6 shadow-sm lg:py-4 border-2 border-gray-300 rounded hover:bg-gray-50 font-medium">
 								Return To Shop
 							</button>
 						</div>
 
 						{/* Coupon and Cart Total */}
-						<div className="flex gap-8 justify-between items-start">
+						<div className="flex lg:flex-row flex-col  gap-8 justify-between lg:items-start">
 							{/* Coupon Code */}
-							<div className="flex gap-4 flex-1 max-w-xl">
+							<div className="flex flex-col max-w-full md:flex-row gap-2  md:gap-4 flex-1  lg:max-w-xl">
 								<input
 									type="text"
 									placeholder="Coupon Code"
 									value={couponCode}
 									onChange={(e) => setCouponCode(e.target.value)}
-									className="flex-1 px-6 py-4 border border-gray-300 rounded"
+									className="flex-1 px-6 py-4  border border-gray-300 rounded"
 								/>
-								<button className="px-12 text-lg py-4 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded">
+								<button className="px-12 md:text-lg text-sm py-4 bg-orange-500  hover:bg-orange-600 text-white font-medium rounded">
 									Apply Coupon
 								</button>
 							</div>
