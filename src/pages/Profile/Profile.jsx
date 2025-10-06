@@ -57,7 +57,7 @@ export default function MyAccountPage() {
   };
 
   return (
-    <div className=" px-4 mt-16 sm:px-8  my-8  md:mt-32 bg-white">
+    <div className=" px-4 mt-16 sm:px-8  my-8  md:mt-28 bg-white">
       <div className="mx-auto px-2 sm:px-4 py-4 sm:py-8">
         {/* Top Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-12 gap-4">

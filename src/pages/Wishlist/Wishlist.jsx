@@ -23,16 +23,21 @@ const Wishlist = () => {
 	const moveAllToCart = () => {
 		const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 		let cart = JSON.parse(localStorage.getItem("cart")) || [];
-		cart = Array.from(new Set([...cart, ...wishlist]));
+
+		const cartIds = cart.map((item) => item.id);
+		const newItems = wishlist
+			.filter((item) => !cartIds.includes(item.id))
+			.map((item) => ({ id:item, quantity: 1 }));
+		cart = [...cart, ...newItems];
 		localStorage.setItem("cart", JSON.stringify(cart));
 		localStorage.setItem("wishlist", JSON.stringify([]));
 		setProducts([]);
 		window.dispatchEvent(new Event("cartUpdated"));
 		window.dispatchEvent(new Event("wishlistUpdated"));
-	}
+	};
 
 	return (
-		<div className="lg:px-14 px-4 pt-8 my-8 lg:my-32">
+		<div className="lg:px-14 px-4 my-8 lg:my-28 md:my-20">
 			<div className="pt-14 flex justify-between items-center  lg:pb-4">
 				<div className="flex items-center h-6 gap-2 ">
 					<div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
@@ -40,7 +45,9 @@ const Wishlist = () => {
 						Wishlist ({product.length})
 					</div>
 				</div>
-				<div onClick={moveAllToCart} className="border cursor-pointer border-black text-sm lg:text-lg lg:p-3 lg:px-8 p-2 rounded-md font-semibold">
+				<div
+					onClick={moveAllToCart}
+					className="border cursor-pointer border-black text-sm lg:text-lg lg:p-3 lg:px-8 p-2 rounded-md font-semibold">
 					Move to Bag
 				</div>
 			</div>
@@ -56,8 +63,10 @@ const Wishlist = () => {
 				</div>
 			) : (
 				<div className="flex flex-col items-center justify-center h-[40vh] gap-4">
-					<h2 className="text-2xl font-medium">Your wishlist is empty</h2>
-					<p className="text-gray-500 text-center">
+					<h2 className="md:text-2xl text-xl font-medium">
+						Your wishlist is empty
+					</h2>
+					<p className="text-gray-500 md:text-lg text-sm text-center">
 						Add items to your wishlist by clicking the heart icon
 					</p>
 				</div>

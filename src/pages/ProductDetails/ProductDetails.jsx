@@ -97,28 +97,28 @@ export default function ProductDetailsPage() {
 
 					{/* Right Side - Product Details */}
 					<div className="flex flex-col">
-						<h1 className="md:text-4xl text-2xl font-semibold mb-3">{product.name}</h1>
+						<h1 className="md:text-4xl text-xl font-semibold mb-3">{product.name}</h1>
 
 						{/* Rating and Stock */}
 						<div className="flex items-center gap-3 mb-4">
-							<div className="flex items-center text-lg gap-1">
+							<div className="flex items-center md:text-lg text-sm gap-1">
 								<Rating rating={product.rating} />
 							</div>
-							<span className="text-gray-500">({product.reviews})</span>
-							<span className="text-gray-300">|</span>
-							<span className="text-green-500 font-medium">In stock</span>
+							<span className="text-gray-500 text-sm md:text-lg">({product.reviews})</span>
+							<span className="text-gray-300 text-sm md:text-lg">|</span>
+							<span className="text-green-500 font-medium text-sm md:text-lg">In stock</span>
 						</div>
 
 						{/* Price */}
 						<div className="flex items-center gap-3 mb-6">
-							<span className="text-3xl font-normal">$ {product.price}</span>
-							<span className="text-gray-400 line-through">
+							<span className="md:text-3xl text-xl font-normal">$ {product.price}</span>
+							<span className="text-gray-400  line-through">
 								$ {product.oldPrice}
 							</span>
 						</div>
 
 						{/* Description */}
-						<p className="text-gray-700 mb-6 pb-6 border-b">
+						<p className="text-gray-700 mb-6 pb-6 text-sm md:text-lg border-b">
 							Comfortable everyday sneakers with breathable fabric and durable
 							sole.
 						</p>
@@ -126,11 +126,11 @@ export default function ProductDetailsPage() {
 						{/* Colors */}
 						<div className="mb-6">
 							<div className="flex items-center gap-4 mb-3">
-								<span className="text-lg">Colors:</span>
-								<div className="flex gap-2">
+								<span className="text-sm md:text-lg">Colors:</span>
+								<div className="flex items-center gap-2">
 									<button
 										onClick={() => setSelectedColor("blue")}
-										className={`w-8 h-8 rounded-full bg-blue-300 ${
+										className={`md:w-8 md:h-8 w-4 h-4 rounded-full bg-blue-300 ${
 											selectedColor === "blue"
 												? "ring-2 ring-offset-2 ring-blue-500"
 												: ""
@@ -138,7 +138,7 @@ export default function ProductDetailsPage() {
 									/>
 									<button
 										onClick={() => setSelectedColor("red")}
-										className={`w-8 h-8 rounded-full bg-red-400 ${
+										className={`md:w-8 md:h-8 w-4 h-4 rounded-full bg-red-400 ${
 											selectedColor === "red"
 												? "ring-2 ring-offset-2 ring-red-500"
 												: ""
@@ -151,13 +151,13 @@ export default function ProductDetailsPage() {
 						{/* Size */}
 						<div className="mb-6">
 							<div className="flex items-center gap-4 mb-3">
-								<span className="text-lg">Size:</span>
+								<span className="text-sm md:text-lg">Size:</span>
 								<div className="flex gap-2">
 									{["7", "8", "9", "10", "11"].map((size) => (
 										<button
 											key={size}
 											onClick={() => setSelectedSize(size)}
-											className={`w-12 h-10 rounded border flex items-center justify-center font-medium ${
+											className={`md:w-12 md:h-10 w-10 h-8 text-sm md:text-lg rounded border flex items-center justify-center font-medium ${
 												selectedSize === size
 													? "bg-orange-500 text-white border-orange-500"
 													: "border-gray-300 hover:border-gray-400"
@@ -221,20 +221,20 @@ export default function ProductDetailsPage() {
 
 						{/* Delivery Info */}
 						<div className="border border-gray-300 rounded-lg divide-y">
-							<div className="p-4 flex gap-4">
-								<Truck className="w-10 h-10 flex-shrink-0" />
+							<div className="p-4 flex items-center gap-4">
+								<Truck className="md:w-10 md:h-10 w-6 h-6 flex-shrink-0" />
 								<div>
-									<h3 className="font-semibold mb-1">Free Delivery</h3>
-									<p className="text-sm text-gray-600">
+									<h3 className="font-semibold md:text-lg text-sm mb-1">Free Delivery</h3>
+									<p className="md:text-sm text-xs text-gray-600">
 										Enter your postal code for Delivery Availability
 									</p>
 								</div>
 							</div>
-							<div className="p-4 flex gap-4">
-								<RotateCcw className="w-10 h-10 flex-shrink-0" />
+							<div className="p-4 flex items-center gap-4">
+								<RotateCcw className="md:w-10 md:h-10 w-6 h-6 flex-shrink-0" />
 								<div>
-									<h3 className="font-semibold mb-1">Return Delivery</h3>
-									<p className="text-sm text-gray-600">
+									<h3 className="font-semibold md:text-lg text-sm mb-1">Return Delivery</h3>
+									<p className="md:text-sm text-xs text-gray-600">
 										Free 30 Days Delivery Returns. Details
 									</p>
 								</div>

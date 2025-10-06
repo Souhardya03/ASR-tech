@@ -80,7 +80,7 @@ export default function CartPage() {
 	const total = subtotal + shipping;
 
 	return (
-		<div className="lg:px-14 px-4 pt-8 my-8 lg:my-32">
+		<div className="lg:px-14  px-4 pt-8 my-8 lg:my-28 md:my-20 lg:pt-0">
 			<div className="mx-auto lg:px-4 py-4 lg:py-8">
 				{/* Breadcrumb */}
 				<div className="flex md:text-lg text-sm items-center gap-2 lg:mb-12 mb-6">
@@ -90,11 +90,11 @@ export default function CartPage() {
 				</div>
 
 				{cartItems.length === 0 ? (
-					<div className="h-[30vh] flex items-center gap-2 justify-center flex-col">
-						<div className="text-center  text-3xl font-medium ">
+					<div className=" flex h-[60vh] items-center gap-2 justify-center flex-col">
+						<div className="text-center  md:text-3xl text-xl font-medium ">
 							Your cart is currently empty.
 						</div>
-						<p className="text-gray-500">
+						<p className="text-gray-500 md:text-lg text-sm">
 							Browse your favourite items from our shop.{" "}
 						</p>
 					</div>
