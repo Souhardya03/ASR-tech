@@ -3,7 +3,6 @@ import CategoryCard from "../../components/CategoryCard";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { products } from "../../data";
 import { ProductCard } from "../../components/ProductCard";
-import { NavLink } from "react-router-dom";
 
 const Products = () => {
 	const scroll = (id, offset) => {
@@ -11,7 +10,7 @@ const Products = () => {
 		if (el) el.scrollBy({ left: offset, behavior: "smooth" });
 	};
 	return (
-		<div className="md:my-24 px-4 my-12 md:px-16">
+		<div className="md:my-24 px-4 my-12 lg:px-6 md:px-16 xl:px-16">
 			<div className="pt-8">
 				<div className="flex items-center h-6 gap-2 ">
 					<div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
@@ -68,7 +67,7 @@ const Products = () => {
 					</div>
 				</div>
 				{/* Shopping Cards */}
-				<div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-2 lg:gap-8 md:mt-8">
+				<div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-2 xl:gap-8 lg:gap-4 md:mt-8">
 					{products.map((product) => (
 						<ProductCard
 							key={product.id}

@@ -80,7 +80,7 @@ export default function CartPage() {
 	const total = subtotal + shipping;
 
 	return (
-		<div className="lg:px-14  px-4 pt-8 my-8 lg:my-28 md:my-20 lg:pt-0">
+		<div className="xl:px-14  px-4 pt-8 my-8 lg:my-28 md:my-20 lg:pt-0">
 			<div className="mx-auto lg:px-4 py-4 lg:py-8">
 				{/* Breadcrumb */}
 				<div className="flex md:text-lg text-sm items-center gap-2 lg:mb-12 mb-6">
@@ -196,7 +196,7 @@ export default function CartPage() {
 						</div>
 
 						{/* Coupon and Cart Total */}
-						<div className="flex lg:flex-row flex-col  gap-8 justify-between lg:items-start">
+						<div className="flex lg:flex-row flex-col gap-8 justify-between lg:items-start">
 							{/* Coupon Code */}
 							<div className="flex flex-col max-w-full md:flex-row gap-2  md:gap-4 flex-1  lg:max-w-xl">
 								<input

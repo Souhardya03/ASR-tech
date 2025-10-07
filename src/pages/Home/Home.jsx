@@ -94,21 +94,21 @@ const Home = () => {
 		if (el) el.scrollBy({ left: offset, behavior: "smooth" });
 	};
 	return (
-		<div className="lg:px-6 mt-20 md:mt-36 lg:mt-28">
+		<div className="xl:px-6 sm:mt-24 mt-20 md:mt-36 lg:mt-28">
 			{/* Banner */}
 			<div
-				className="relative overflow-hidden mx-2 rounded-xl flex justify-end  md:px-16 lg:px-24 lg:pt-8 md:mx-8 h-[220px] md:h-[360px] lg:h-[500px]"
+				className="relative overflow-hidden mx-2 rounded-xl flex justify-end  md:px-16 lg:px-24 lg:pt-8 md:mx-8 h-[220px] sm:h-[240px] md:h-[340px] lg:h-[450px] xl:h-[500px]"
 				style={{ background: "linear-gradient(#F9F9F9, #E1E1E1)" }}>
 				{/* Left Content */}
 				<div className="absolute z-10 p-3 left-0">
-					<div className="md:max-w-5xl z-1 py-4 lg:px-28 md:px-4">
-						<h2 className="md:text-4xl lg:text-6xl leading-6  font-bold text-gray-900 ">
+					<div className="md:max-w-5xl z-1 py-4 xl:px-28 md:px-4">
+						<h2 className="md:text-4xl xl:text-6xl lg:text-5xl leading-6  font-bold text-gray-900 ">
 							Discover the{" "}
 							<span className="text-[#ffac32] lg::text-7xl">Best Deals</span>
 							<br />
 							on Trendy Products
 						</h2>
-						<p className="lg:my-12 md:my-8 mt-2 text-[10px] font-medium lg:w-full w-[60%] md:text-[16px] lg:text-[24px] text-gray-800">
+						<p className="lg:my-12 md:my-8 mt-2 text-[10px] font-medium xl:w-full w-[60%] md:text-[16px] lg:text-[24px] text-gray-800">
 							QuickShop is your one-stop shop for top-quality items at
 							unbeatable prices. Explore our latest arrivals and exclusive
 							offers today!
@@ -125,7 +125,7 @@ const Home = () => {
 				</div>
 
 				{/* Right Content - Watch Image */}
-				<div className="absolute bottom-0 right-0 md:mt-0 ml-4 mt-14">
+				<div className="absolute bottom-0 right-0 lg:-bottom-8 lg:-right-4 md:mt-0 ml-4 mt-14">
 					<img
 						src={SmartWatch}
 						alt="Smart Watch"
@@ -142,13 +142,13 @@ const Home = () => {
 						Today's Sale
 					</div>
 				</div>
-				<div className="md:flex w-full justify-between mt-6 gap-16 items-center">
+				<div className="lg:flex w-full flex-col lg:flex-row justify-between lg:mt-6 gap-16 items-center">
 					<div className="flex w-full items-center gap-16">
 						<div className=" text-[24px] md:text-[36px] font-medium">
 							Flash Sales
 						</div>
 					</div>
-					<div className="flex md:flex-row flex-col justify-end items-center gap-2 md:gap-4">
+					<div className="flex sm:flex-row flex-col justify-end items-center gap-2 md:gap-4">
 						<CountdownTimer />
 						<div className="flex items-center md:gap-4 gap-2 mt-2 md:mt-0 justify-end w-full">
 							<div
@@ -166,7 +166,7 @@ const Home = () => {
 				</div>
 
 				{/* Product card */}
-				<div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-2 lg:gap-8 md:mt-8">
+				<div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-2 xl:gap-8 lg:gap-4 md:mt-8">
 					{products.slice(0, 4).map((product) => (
 						<ProductCard
 							key={product.id}
@@ -221,10 +221,10 @@ const Home = () => {
 
 				{/* Banner 2 */}
 				<div className="lg:my-8">
-					<div className="bg-black md:p-8 p-4 lg:px-28 w-full flex justify-between h-[200px] md:h-[400px] lg:h-[500px]">
-						<div className="flex  flex-col justify-center h-full gap-2 md:gap-8">
+					<div className="bg-black md:p-8 p-4 xl:px-28 w-full flex justify-between h-[200px] md:h-[400px] sm:h-[300px] lg:h-[500px]">
+						<div className="flex  flex-col justify-center h-full gap-2 sm:gap-8 md:gap-8">
 							<p className="text-[#00FF66] text-xs md:text-lg font-medium">Categories</p>
-							<h2 className="text-white font-semibold text-sm lg:text-6xl md:text-4xl">
+							<h2 className="text-white font-semibold text-sm lg:text-6xl sm:text-3xl md:text-4xl">
 								Enhance Your Music Experience
 							</h2>
 							<div className="flex gap-2 md:gap-4">
@@ -255,6 +255,7 @@ const Home = () => {
 							<img
 								src={Banner2}
 								alt=""
+								
 							/>
 						</div>
 					</div>
@@ -284,7 +285,7 @@ const Home = () => {
 						</div>
 					</div>
 					{/* Shopping Cards */}
-					<div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-2 lg:gap-8 md:mt-8">
+					<div className="md:grid hidden md:grid-cols-4 lg:gap-4 grid-cols-2 gap-2 xl:gap-8 md:mt-8">
 						{products.map((product) => (
 							<ProductCard
 								key={product.id}

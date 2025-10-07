@@ -34,7 +34,7 @@ const CategoryCard = () => {
 	};
 	return (
 		<div>
-			<div className="md:grid hidden grid-cols-2 md:grid-cols-6 lg:gap-8 gap-2 md:mt-8">
+			<div className="md:grid hidden grid-cols-2 md:grid-cols-6 xl:gap-8 gap-2 md:mt-8">
 				{categories.map((category) => (
 					<CategoryCard
 						key={category.id}
@@ -75,7 +75,7 @@ const CategoryCard = () => {
 				</div>
 			)}
 			{categoriesData && categoriesData.length > 0 && (
-				<div className="grid grid-cols-2 md:grid-cols-4 lg:gap-8 gap-2 mt-2 lg:mb-[6em]">
+				<div className="grid grid-cols-2 md:grid-cols-4 xl:gap-8 gap-2 mt-2 lg:mb-[6em]">
 					{categoriesData.map((product) => (
 						<ProductCard
 							key={product.id}

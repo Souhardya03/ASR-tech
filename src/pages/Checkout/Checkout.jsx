@@ -63,7 +63,7 @@ export default function CheckoutPage() {
 	const total = subtotal + (shipping === "Free" ? 0 : shipping);
 
 	return (
-		<div className="min-h-screen md:mt-28 lg:px-16 my-20 bg-white">
+		<div className=" md:mt-28 xl:px-16 lg:px-6 my-20 bg-white">
 			<div className=" mx-auto px-4 md:py-8">
 				{/* Breadcrumb */}
 				<div className="flex items-center gap-1 md:gap-2 text-xs md:text-lg mb-4 md:mb-12 text-gray-500">
@@ -79,7 +79,7 @@ export default function CheckoutPage() {
 				</div>
 
 				{/* Main Content */}
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 md:gap-16">
 					{/* Left Side - Billing Details */}
 					<div>
 						<h1 className="md:text-4xl text-2xl font-medium mb-4 md:mb-12">

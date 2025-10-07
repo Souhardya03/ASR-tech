@@ -61,7 +61,7 @@ export const ProductCard = ({
 	};
 
 	return (
-		<div className=" lg:py-8 pt-8">
+		<div className=" xl:py-8 lg:pb-14 pt-8">
 			<div className=" rounded-lg md:h-[350px]">
 				<div className="relative group overflow-hidden bg-[#f5f5f5] flex items-center justify-center h-[220px] md:h-[200px]  lg:h-[300px]">
 					<div className="absolute right-1 md:right-2 top-2 ">

@@ -37,7 +37,7 @@ const Wishlist = () => {
 	};
 
 	return (
-		<div className="lg:px-14 px-4 my-8 lg:my-28 md:my-20">
+		<div className="xl:px-14 lg:px-6 px-4 my-8 xl:my-28 md:my-20">
 			<div className="pt-14 flex justify-between items-center  lg:pb-4">
 				<div className="flex items-center h-6 gap-2 ">
 					<div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
@@ -52,7 +52,7 @@ const Wishlist = () => {
 				</div>
 			</div>
 			{product.length > 0 ? (
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-8 lg:mt-8 lg:mb-32">
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-4 xl:gap-8 xl:mt-8 lg:mb-6 xl:mb-32">
 					{product.map((product) => (
 						<ProductCard
 							key={product.id}
@@ -80,7 +80,7 @@ const Wishlist = () => {
 					</div>
 				</div>
 			</div>
-			<div className="grid md:grid-cols-4 grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-2 lg:mt-8">
+			<div className="grid md:grid-cols-4 grid-cols-2 lg:grid-cols-4 lg:gap-4 xl:gap-8 gap-2 xl:mt-8">
 				{products.slice(0, 4).map((product) => (
 					<ProductCard
 						key={product.id}

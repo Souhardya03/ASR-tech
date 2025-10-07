@@ -66,7 +66,7 @@ const NavBar = () => {
 	return (
 		<>
 			{isSearchOpen && (
-				<div className="sm:hidden fixed inset-0 bg-white z-30 flex flex-col">
+				<div className="md:hidden fixed inset-0 bg-white z-30 flex flex-col">
 					<div className="flex items-center gap-3 p-4 border-b">
 						<button
 							onClick={() => setIsSearchOpen(false)}
@@ -99,14 +99,14 @@ const NavBar = () => {
 			)}
 
 			{/* Top NavBar */}
-			<nav className="bg-white p-2 sm:p-4 md:py-6 lg:py-4 px-4 sm:px-6 md:px-6 lg:px-14 shadow-md fixed z-20 w-full top-0 flex flex-wrap justify-between items-center gap-3">
+			<nav className="bg-white p-2 sm:p-4 md:py-6 lg:py-4 px-4 sm:px-6 md:px-6 xl:px-14 shadow-md fixed z-20 w-full top-0 flex flex-wrap justify-between items-center gap-3">
 				{/* Logo */}
 				<div className="text-[#F54A00] text-[20px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-semibold">
 					QuickShop
 				</div>
 
 				<div
-					className="sm:hidden bg-[#f3f3f9] border border-gray-400 rounded-full w-[45px] h-[45px] flex items-center justify-center cursor-pointer"
+					className="md:hidden bg-[#f3f3f9] border border-gray-400 rounded-full w-[45px] h-[45px] flex items-center justify-center cursor-pointer"
 					onClick={() => setIsSearchOpen(true)}>
 					<img
 						src={SearchIcon}
@@ -115,7 +115,7 @@ const NavBar = () => {
 					/>
 				</div>
 
-				<div className="hidden sm:flex border rounded-full bg-[#f3f3f9] border-gray-400 justify-between w-full sm:w-[300px] md:w-[280px] lg:w-[508px] h-[45px] sm:h-[48px] md:h-[53px] order-3 sm:order-2">
+				<div className="hidden md:flex border rounded-full bg-[#f3f3f9] border-gray-400 justify-between w-full sm:w-[300px] md:w-[260px] lg:w-[350px] xl:w-[508px] h-[45px] sm:h-[48px] md:h-[53px] order-3 sm:order-2">
 					<div className="flex w-full px-2 sm:px-3 md:px-4 py-1 focus:outline-none">
 						<img
 							src={SearchIcon}
@@ -133,7 +133,7 @@ const NavBar = () => {
 					</div>
 				</div>
 
-				<div className="hidden sm:flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 order-2 sm:order-3">
+				<div className="hidden md:flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 order-2 sm:order-3">
 					{routeIcons.map((route, index) => (
 						<NavLink
 							key={index}
@@ -157,7 +157,7 @@ const NavBar = () => {
 				</div>
 			</nav>
 
-			<nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.1)] z-20 pb-safe">
+			<nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.1)] z-20 pb-safe">
 				<div className="flex justify-around items-center h-16 px-2">
 					{routeIcons.map((route, index) => (
 						<NavLink
