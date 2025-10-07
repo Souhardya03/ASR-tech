@@ -20,7 +20,7 @@ export const ProductCard = ({
 	reviews,
 	discount,
 	onWishlistChange,
-	onCartChange
+	onCartChange,
 }) => {
 	const [inWishlist, setInWishlist] = useState(false);
 	const [inCart, setInCart] = useState(false);
@@ -28,8 +28,9 @@ export const ProductCard = ({
 	useEffect(() => {
 		const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 		setInWishlist(wishlist.includes(id));
+
 		const cart = JSON.parse(localStorage.getItem("cart")) || [];
-		setInCart(cart.includes(id));
+		setInCart(cart.some((item) => item.id === id));
 	}, [id]);
 
 	const toggleWishlist = () => {
@@ -47,9 +48,9 @@ export const ProductCard = ({
 	};
 	const toggleCart = () => {
 		let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-		const existingItem = cartItems.find(item => item.id === id);
+		const existingItem = cartItems.find((item) => item.id === id);
 		if (existingItem) {
-			cartItems = cartItems.filter(item => item.id !== id);
+			cartItems = cartItems.filter((item) => item.id !== id);
 			setInCart(false);
 		} else {
 			cartItems.push({ id, quantity: 1 });
