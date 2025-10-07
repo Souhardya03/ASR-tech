@@ -64,7 +64,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<>
+		<div className="flex items-center justify-center">
 			{isSearchOpen && (
 				<div className="md:hidden fixed inset-0 bg-white z-30 flex flex-col">
 					<div className="flex items-center gap-3 p-4 border-b">
@@ -99,7 +99,7 @@ const NavBar = () => {
 			)}
 
 			{/* Top NavBar */}
-			<nav className="bg-white p-2 sm:p-4 md:py-6 lg:py-4 px-4 sm:px-6 md:px-6 xl:px-14 shadow-md fixed z-20 w-full top-0 flex flex-wrap justify-between items-center gap-3">
+			<nav className="bg-white p-2 sm:p-4 max-w-[1920px] mx-auto md:py-6 lg:py-4 px-4 sm:px-6 md:px-6 xl:px-14 shadow-md fixed z-20 w-full top-0 flex flex-wrap justify-between items-center gap-3">
 				{/* Logo */}
 				<div className="text-[#F54A00] text-[20px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-semibold">
 					QuickShop
@@ -194,7 +194,7 @@ const NavBar = () => {
 					))}
 				</div>
 			</nav>
-		</>
+		</div>
 	);
 };
 

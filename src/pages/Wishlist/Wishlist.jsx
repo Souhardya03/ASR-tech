@@ -37,7 +37,7 @@ const Wishlist = () => {
 	};
 
 	return (
-		<div className="xl:px-14 lg:px-6 px-4 my-8 xl:my-28 md:my-20">
+		<div className="xl:px-14 min-h-screen lg:px-6 px-4 my-8 xl:my-28 md:my-20">
 			<div className="pt-14 flex justify-between items-center  lg:pb-4">
 				<div className="flex items-center h-6 gap-2 ">
 					<div className="border-3 rounded-lg bg-[#F54A00] h-full w-2"></div>
