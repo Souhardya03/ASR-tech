@@ -94,7 +94,7 @@ const Home = () => {
 		if (el) el.scrollBy({ left: offset, behavior: "smooth" });
 	};
 	return (
-		<div className="lg:px-6 mt-20 md:mt-44 lg:mt-28">
+		<div className="lg:px-6 mt-20 md:mt-36 lg:mt-28">
 			{/* Banner */}
 			<div
 				className="relative overflow-hidden mx-2 rounded-xl flex justify-end  md:px-16 lg:px-24 lg:pt-8 md:mx-8 h-[220px] md:h-[360px] lg:h-[500px]"
