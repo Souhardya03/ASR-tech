@@ -116,7 +116,7 @@ export const ProductCard = ({
 				<div className="mt-4">
 					<NavLink
 						to={`/product/${id}`}
-						className="font-semibold md:text-xl cursor-pointer"
+						className="font-semibold md:text-xl line-clamp-1 cursor-pointer"
 						onClick={() => window.scrollTo(0, 0)}>
 						{name}
 					</NavLink>

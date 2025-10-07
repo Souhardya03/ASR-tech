@@ -97,18 +97,18 @@ const Home = () => {
 		<div className="xl:px-6 sm:mt-24 mt-20 md:mt-36 lg:mt-28">
 			{/* Banner */}
 			<div
-				className="relative overflow-hidden mx-2 rounded-xl flex justify-end  md:px-16 lg:px-24 lg:pt-8 md:mx-8 h-[220px] sm:h-[240px] md:h-[340px] lg:h-[450px] xl:h-[500px]"
+				className="relative overflow-hidden mx-2 rounded-xl flex justify-end  md:px-16 lg:px-24 xl:px-20 lg:pt-8 md:mx-8 h-[220px] sm:h-[240px] md:h-[340px] lg:h-[450px] xl:h-[500px]"
 				style={{ background: "linear-gradient(#F9F9F9, #E1E1E1)" }}>
 				{/* Left Content */}
 				<div className="absolute z-10 p-3 left-0">
-					<div className="md:max-w-5xl z-1 py-4 xl:px-28 md:px-4">
+					<div className="md:max-w-5xl z-1 py-4 xl:px-20 md:px-4">
 						<h2 className="md:text-4xl xl:text-6xl lg:text-5xl leading-6  font-bold text-gray-900 ">
 							Discover the{" "}
 							<span className="text-[#ffac32] lg::text-7xl">Best Deals</span>
 							<br />
 							on Trendy Products
 						</h2>
-						<p className="lg:my-12 md:my-8 mt-2 text-[10px] font-medium xl:w-full w-[60%] md:text-[16px] lg:text-[24px] text-gray-800">
+						<p className="lg:my-12 md:my-8 mt-2 text-[10px] font-medium xl:w-[80%] w-[55%] md:text-[16px] lg:text-[24px] text-gray-800">
 							QuickShop is your one-stop shop for top-quality items at
 							unbeatable prices. Explore our latest arrivals and exclusive
 							offers today!
@@ -125,7 +125,7 @@ const Home = () => {
 				</div>
 
 				{/* Right Content - Watch Image */}
-				<div className="absolute bottom-0 right-0 lg:-bottom-8 lg:-right-4 md:mt-0 ml-4 mt-14">
+				<div className="absolute bottom-0 -right-2 lg:-bottom-8 lg:-right-4 md:mt-0 ml-4 mt-14">
 					<img
 						src={SmartWatch}
 						alt="Smart Watch"
