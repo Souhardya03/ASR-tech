@@ -15,12 +15,8 @@ const CategoryCard = () => {
 					className={`h-[100px] md:h-[120px]  lg:w-full lg:h-[150px] ${
 						categoriesId === id ? "bg-[#fb2c36]" : ""
 					} cursor-pointer group hover:bg-[#fb2c36]  duration-150 border my-4 flex flex-col justify-center gap-2 rounded-md border-gray-400`}>
-					<div className="flex items-center lg:p-2 justify-center">
-						<img
-							src={image}
-							alt=""
-							className="w-10 h-10 lg:w-12 lg:h-12 object-contain"
-						/>
+					<div className="flex items-center lg:p-2 justify-center group-hover:text-white">
+						{image}
 					</div>
 					<h2
 						className={`text-center ${

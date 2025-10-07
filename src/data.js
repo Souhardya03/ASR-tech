@@ -11,82 +11,88 @@ import Category3 from "./assets/Category3.svg";
 import Category4 from "./assets/Category4.svg";
 import Category5 from "./assets/Category5.svg";
 import Category6 from "./assets/Category6.svg";
+import { CiCamera } from "react-icons/ci";
+import { MdPhoneIphone } from "react-icons/md";
+import { GiRunningShoe } from "react-icons/gi";
+import { FaTshirt } from "react-icons/fa";
+import { FaHeadphonesSimple } from "react-icons/fa6";
+import { RiSofaFill } from "react-icons/ri";
 
 export const products = [
-  {
-    id: 1,
-    image: Product1,
-    name: "HAVIT HV-G92 Gamepad",
-    price: 120,
-    oldPrice: 160,
-    rating: 5,
-    reviews: 89,
-    discount: 40,
-    categoryId: 5, // Electronics
-  },
-  {
-    id: 2,
-    image: Product2,
-    name: "AK-900 Wired Keyboard",
-    price: 960,
-    oldPrice: 1160,
-    rating: 4,
-    reviews: 75,
-    discount: 35,
-    categoryId: 1, // Electronics
-  },
-  {
-    id: 3,
-    image: Product3,
-    name: "Shirt",
-    price: 370,
-    oldPrice: 400,
-    rating: 5,
-    reviews: 99,
-    discount: 30,
-    categoryId: 3, // Electronics
-  },
-  {
-    id: 4,
-    image: Product4,
-    name: "S-Series Comfort Mouse",
-    price: 375,
-    oldPrice: 400,
-    rating: 4.8,
-    reviews: 99,
-    discount: 25,
-    categoryId: 1, // Home Decor
-  },
-  {
-    id: 5,
-    image: Product5,
-    name: "Shoes",
-    price: 420,
-    oldPrice: 500,
-    rating: 4.5,
-    reviews: 150,
-    discount: 20,
-    categoryId: 2, // Footwear
-  },
-  {
-    id: 6,
-    image: Product6,
-    name: "GP11 Shooter USB Gamepad",
-    price: 80,
-    oldPrice: 100,
-    rating: 4.2,
-    reviews: 200,
-    discount: 15,
-    categoryId: 1, // Electronics
-  },
+	{
+		id: 1,
+		image: Product1,
+		name: "HAVIT HV-G92 Gamepad",
+		price: 120,
+		oldPrice: 320,
+		rating: 5,
+		reviews: 89,
+		discount: 40,
+		categoryId: 5, // Electronics
+	},
+	{
+		id: 2,
+		image: Product2,
+		name: "AK-900 Wired Keyboard",
+		price: 960,
+		oldPrice: 1320,
+		rating: 4,
+		reviews: 75,
+		discount: 35,
+		categoryId: 1, // Electronics
+	},
+	{
+		id: 3,
+		image: Product3,
+		name: "Shirt",
+		price: 370,
+		oldPrice: 400,
+		rating: 5,
+		reviews: 99,
+		discount: 30,
+		categoryId: 3, // Electronics
+	},
+	{
+		id: 4,
+		image: Product4,
+		name: "S-Series Comfort Mouse",
+		price: 375,
+		oldPrice: 400,
+		rating: 4.8,
+		reviews: 99,
+		discount: 25,
+		categoryId: 1, // Home Decor
+	},
+	{
+		id: 5,
+		image: Product5,
+		name: "Shoes",
+		price: 420,
+		oldPrice: 500,
+		rating: 4.5,
+		reviews: 150,
+		discount: 20,
+		categoryId: 2, // Footwear
+	},
+	{
+		id: 6,
+		image: Product6,
+		name: "GP11 Shooter USB Gamepad",
+		price: 80,
+		oldPrice: 100,
+		rating: 4.2,
+		reviews: 200,
+		discount: 15,
+		categoryId: 1, // Electronics
+	},
 ];
 
-
 export const categories = [
-  { id: 1, image: Category1, name: "Electronics" },
-  { id: 2, image: Category2, name: "Footwear" },
-  { id: 3, image: Category3, name: "Clothing" },
-  { id: 4, image: Category4, name: "Camera" },
-  { id: 5, image: Category5, name: "Headphones" },
-  { id: 6, image: Category6, name: "Home Decor" },
+	{ id: 1, image: <MdPhoneIphone size={32}/>, name: "Electronics" },
+	{ id: 2, image: <GiRunningShoe size={32}/>, name: "Footwear" },
+	{ id: 3, image: <FaTshirt size={32}/>, name: "Clothing" },
+	{ id: 4, image: <CiCamera size={32}/>, name: "Camera" },
+	{ id: 5, image: <FaHeadphonesSimple size={32}/>, name: "Headphones" },
+	{ id: 6, image: <RiSofaFill size={32}/>
+, name: "Home Decor" },
 ];

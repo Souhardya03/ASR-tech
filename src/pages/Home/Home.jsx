@@ -142,13 +142,13 @@ const Home = () => {
 						Today's Sale
 					</div>
 				</div>
-				<div className="lg:flex w-full flex-col lg:flex-row justify-between lg:mt-6 gap-16 items-center">
+				<div className="lg:flex w-full flex-col lg:flex-row sm:justify-between lg:mt-6 gap-16 sm:items-center">
 					<div className="flex w-full items-center gap-16">
 						<div className=" text-[24px] md:text-[36px] font-medium">
 							Flash Sales
 						</div>
 					</div>
-					<div className="flex sm:flex-row flex-col justify-end items-center gap-2 md:gap-4">
+					<div className="flex sm:flex-row flex-col sm:justify-end items-center gap-2 md:gap-4">
 						<CountdownTimer />
 						<div className="flex items-center md:gap-4 gap-2 mt-2 md:mt-0 justify-end w-full">
 							<div
