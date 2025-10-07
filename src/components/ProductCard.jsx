@@ -106,12 +106,13 @@ export const ProductCard = ({
 							Add to cart
 						</div>
 					)}
-
-					<img
-						src={image}
-						className="md:w-full lg:h-64 w-32 h-32 "
-						alt=""
-					/>
+					<NavLink to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
+						<img
+							src={image}
+							className="md:w-full lg:h-64 w-32 h-32 "
+							alt=""
+						/>
+					</NavLink>
 				</div>
 				<div className="mt-4">
 					<NavLink
